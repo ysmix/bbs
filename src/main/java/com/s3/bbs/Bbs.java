@@ -7,7 +7,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class Bbs {
     public static void main(String[] args) {
-        try (ConfigurableApplicationContext ctx = SpringApplication.run(Bbs.class, args)) {
-        }
+        SpringApplication.run(Bbs.class, args);
     }
 }
