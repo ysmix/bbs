@@ -1,10 +1,10 @@
-package com.s3.bbs.model;
+package com.s3.gush.model;
 
 import org.seasar.doma.Entity;
 import org.seasar.doma.Id;
 
 @Entity
-public class Sample {
+public class Event {
 
     @Id
     public String id;

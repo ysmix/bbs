@@ -1,10 +1,10 @@
-package com.s3.bbs;
+package com.s3.gush;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Bbs {
+public class Gush {
     public static void main(String[] args) {
         SpringApplication.run(Bbs.class, args);
     }
