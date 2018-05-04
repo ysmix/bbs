@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost/bbs
+    url: jdbc:mysql://localhost/gush
     username: root
     password: root
     driverClassName: com.mysql.jdbc.Driver

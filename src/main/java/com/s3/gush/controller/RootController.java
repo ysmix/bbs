@@ -1,7 +1,8 @@
-package com.s3.bbs.controller;
+package com.s3.gush.controller;
 
-import com.s3.bbs.model.Sample;
-import com.s3.bbs.repository.SampleRepository;
+
+import com.s3.gush.repository.Event;
+import com.s3.gush.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,10 +15,10 @@ import java.util.List;
 public class RootController {
 
     @Autowired
-    SampleRepository sampleRepository;
+    EventRepository eventRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Sample> getSampleAll(){
-        return sampleRepository.getSampleAll();
+    public List<Event> getEventAll(){
+        return eventRepository.getEventAll();
     }
 }
