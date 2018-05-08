@@ -38,6 +38,8 @@ dependencies {
     compile('mysql:mysql-connector-java')
     compile('com.squareup.okhttp3:okhttp:3.10.0')
 
+    compile ('org.json:json:20171018')
+
     // test
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
