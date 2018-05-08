@@ -14,7 +14,7 @@ public class ConnpassEventResource implements EventResource {
         List<Event> events = new ArrayList<>();
         Event event = new Event();
         event.id = "0001";
-        event.name = "python2.7";
+        event.title = "python2.7";
         events.add(event);
         return events;
     }
