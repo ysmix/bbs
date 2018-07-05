@@ -36,4 +36,16 @@ public class Event {
      * connpass field : limit
      */
     public int limitPeaple;
+
+    /**
+     * connpass field : address
+     */
+    public String address;
+
+    /**
+     * connpass field : place
+     */
+    public String place;
+
+    public Series series;
 }
