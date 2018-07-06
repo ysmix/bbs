@@ -12,10 +12,6 @@ public class DoorkeeperEventResource implements EventResource {
     @Override
     public List<Event> findByKeyword(String keyword) {
         List<Event> events = new ArrayList<>();
-        Event event = new Event();
-        event.id = "0002";
-        event.title = "java1.8";
-        events.add(event);
         return events;
     }
 }
