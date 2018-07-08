@@ -8,30 +8,17 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 @Component
 public class ConnpassEventResource implements EventResource {
-
-
-    private Map<String, Pair<Date, List<Event>>> cacheMap = new HashMap<>();
-
     @Override
     public List<Event> findByKeyword(String keyword) {
-        Pair<Date, List<Event>> cache = (cacheMap != null) ? cacheMap.get(keyword) : null;
-        if (cache != null) {
-            long elapsed  = (new Date().getTime() - cache.getFirst().getTime());
-            if (elapsed < 60000) {
-                System.out.println("cache HIT!");
-                System.out.println("cache created: " + cache.getFirst());
-                System.out.println("cache duration: " + (new Date().getTime() - cache.getFirst().getTime()));
-                return cache.getSecond();
-            }
-        }
         final int maxCount = 5;
 
         String url = "https://connpass.com/api/v1/event/?keyword=" + keyword + "&count=" + maxCount;
@@ -69,7 +56,6 @@ public class ConnpassEventResource implements EventResource {
                 events.add(event);
 
             }
-            cacheMap.put(keyword, Pair.of(new Date(), events));
             return events;
         } catch (Exception e) {
             e.printStackTrace();
