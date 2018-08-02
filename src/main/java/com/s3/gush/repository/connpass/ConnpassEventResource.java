@@ -47,12 +47,14 @@ public class ConnpassEventResource implements EventResource {
                 event.place = object.getString("place");
                 event.setStart(object.getString("started_at"));
                 event.setEnd(object.getString("ended_at"));
-                JSONObject seriesObject = object.getJSONObject("series");
-                Series series = new Series();
-                series.id = String.valueOf(seriesObject.getInt("id"));
-                series.url = seriesObject.getString("url");
-                series.title = seriesObject.getString("title");
-                event.series = series;
+                if (!object.isNull("series")) {
+                    JSONObject seriesObject = object.getJSONObject("series");
+                    Series series = new Series();
+                    series.id = String.valueOf(seriesObject.getInt("id"));
+                    series.url = seriesObject.getString("url");
+                    series.title = seriesObject.getString("title");
+                    event.series = series;
+                }
                 events.add(event);
 
             }
